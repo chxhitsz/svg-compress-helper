@@ -3,7 +3,7 @@
   "displayName": "SVG Compress Helper",
   "description": "VSCode extension for SVG compression and monochrome conversion based on SVGO 4.0+",
   "version": "1.0.0",
-  "publisher": "chx00026188",
+  "publisher": "chxhitsz",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.96.0"
