@@ -1,0 +1,77 @@
+{
+  "name": "svg-compress-helper",
+  "displayName": "SVG Compress Helper",
+  "description": "VSCode extension for SVG compression and monochrome conversion based on SVGO 4.0+",
+  "version": "1.0.0",
+  "publisher": "chx00026188",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:svg-compress-helper.compressSvg",
+    "onCommand:svg-compress-helper.compressToMono"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "svg-compress-helper.compressSvg",
+        "title": "Compress SVG"
+      },
+      {
+        "command": "svg-compress-helper.compressToMono",
+        "title": "Compress to Monochrome SVG"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "svg-compress-helper.compressSvg",
+          "when": "resourceExtname == .svg || (explorerResourceIsFolder == false && listMultiSelection == true)",
+          "group": "modification@1"
+        },
+        {
+          "command": "svg-compress-helper.compressToMono",
+          "when": "resourceExtname == .svg || (explorerResourceIsFolder == false && listMultiSelection == true)",
+          "group": "modification@2"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.96.11",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vscode/test-electron": "^2.3.0",
+    "@vscode/vsce": "^2.22.0",
+    "eslint": "^8.57.0",
+    "glob": "^10.3.0",
+    "mocha": "^10.3.0",
+    "typescript": "^5.0.0",
+    "undici": "^5.28.4"
+  },
+  "dependencies": {
+    "svgo": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT"
+}
