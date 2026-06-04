@@ -106,7 +106,7 @@ module.exports = {
 ## Requirements
 
 - VSCode 1.96.0 or higher
-- Node.js 18.0 or higher
+- Node.js 20.0 or higher
 
 ## Known Issues
 
